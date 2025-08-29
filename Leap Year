@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class test1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("أدخل سنة للتحقق مما إذا كانت كبيسة: ");
+        int year = scanner.nextInt();
+
+        isLeapYear(year);
+
+        scanner.close();
+    }
+
+    public static void isLeapYear(int year) {
+        boolean isLeap = false;
+
+        if (year % 4 == 0) {
+            if (year % 100 != 0 || year % 400 == 0) {
+                isLeap = true;
+            }
+        }
+
+        if (isLeap) {
+            System.out.println(year + " سنة كبيسة.");
+        } else {
+            System.out.println(year + " ليست سنة كبيسة.");
+        }
+    }
+}
+
