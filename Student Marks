@@ -1,0 +1,43 @@
+public class StudentMarksAnalysis {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of students: ");
+        int numStudents = scanner.nextInt();
+
+        int[] marks = new int[numStudents];
+        int sum = 0;
+        int highest = Integer.MIN_VALUE;
+        int lowest = Integer.MAX_VALUE;
+        int passed = 0;
+        int failed = 0;
+
+        for (int i = 0; i < numStudents; i++) {
+            System.out.print("Enter mark for student " + (i + 1) + ": ");
+            marks[i] = scanner.nextInt();
+            sum += marks[i];
+
+            if (marks[i] > highest) highest = marks[i];
+            if (marks[i] < lowest) lowest = marks[i];
+            if (marks[i] >= 50) passed++;
+            else failed++;
+        }
+
+
+        double average = (double) sum / numStudents;
+
+        // Print all marks with index
+        System.out.println("\nStudent Marks:");
+        for (int i = 0; i < numStudents; i++) {
+            System.out.println("Student " + (i + 1) + ": " + marks[i]);
+        }
+
+
+        System.out.println("\nAverage mark: " + average);
+        System.out.println("Highest mark: " + highest);
+        System.out.println("Lowest mark: " + lowest);
+        System.out.println("Number of students passed: " + passed);
+        System.out.println("Number of students failed: " + failed);
+    }
+}
+
