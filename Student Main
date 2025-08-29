@@ -1,0 +1,31 @@
+public class Main {
+    public static void main(String[] args) {
+
+
+        int[] numbers = {12, 7, 3, 18, 6, 9, 25};
+
+        int max = numbers[0];
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 0) {
+                numbers[i] = 0;
+            }
+        }
+
+
+        System.out.println(" The largest number is: " + max);
+        System.out.print(" Array after replacing even numbers with 0: ");
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+    }
+
+}
